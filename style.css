@@ -12,6 +12,7 @@ h1{
     padding: 10px;
     font-size: 50px;
     text-align: center;
+    margin: 10px 0px;
 }
 .lat-long{
 display: flex;
