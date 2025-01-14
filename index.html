@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeZone App</title>
+    <link rel="Stylesheet" href="./style.css"> 
+</head>
+<body>
+    <header>
+        <h1>TimeZone API</h1>
+    </header>
+    <section class="current-timezone">
+        <div class="timezone-container" id="current">
+       <h1>Your Current Time Zone</h1>
+       <div class="time-container" style="border: 2px solid black;">
+        <p>Name of the Time Zone: </p>
+        <div class="lat-long">
+            <p>Lat:</p>
+            <p>Long:</p>
+        </div>
+        <p>Offset STD:</p>
+        <p>Offset STD Seconds :</p>
+        <p>Offset DST :</p>
+        <p>Offset DST Seconds:</p>
+        <p>Country:</p>
+        <p>Postcode:</p>
+        <p>City:</p>
+       </div>
+    </div>
+    </section>
+    <section class="search-section">
+        <h1>Enter Address</h1>
+        <input type="text" placeholder="Address"><br>
+        <button>Submit</button> 
+
+        <div class="timezone-container">
+            <h1>Your Result</h1>
+            <div class="time-container" style="border: 2px solid rgb(255, 255, 255);">
+             <p>Name of the Time Zone: </p>
+             <div class="lat-long">
+                 <p>Lat:</p>
+                 <p>Long:</p>
+             </div>
+             <p>Offset STD:</p>
+             <p>Offset STD Seconds :</p>
+             <p>Offset DST :</p>
+             <p>Offset DST Seconds:</p>
+             <p>Country:</p>
+             <p>Postcode:</p>
+             <p>City:</p>
+            </div>
+         </div>
+    </section>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
