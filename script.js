@@ -17,8 +17,7 @@ fetch(`https://api.geoapify.com/v1/geocode/reverse?lat=${position.coords.latitud
 .then(resp => resp.json())
 .then((result) => {
   
-    data = result;
-  console.log(data)
+  data = result;
 
   document.getElementById(set_id).innerHTML = `
         <h1>${count == 0 ? "Your Current Time Zone" : "Your Result"}</h1>
@@ -49,17 +48,27 @@ submit_btn.addEventListener("click",()=>{
   fetch(`https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(search_add)}&apiKey=2534abee8fde4cf593b4798756b1a43a`)
   .then(resp => resp.json())
   .then((geocodingResult) => {
-	console.log(geocodingResult);
-  let position = {
-    coords:{
-      latitude:Number(geocodingResult.features[0].properties.lat),
-      longitude:Number(geocodingResult.features[0].properties.lon),
-    }
+  if(geocodingResult.error)
+  {
+  document.getElementById("result").innerHTML = `
+  <p style="background-color: red;">Can't Get Your Address.</p>
+  `
   }
-  console.log(position.coords.latitude);
-  count=1;
-  showPosition(position);
+  else{
+    let position = {
+      coords:{
+        latitude:Number(geocodingResult.features[0].properties.lat),
+        longitude:Number(geocodingResult.features[0].properties.lon),
+      }
+    }
+    count=1;
+    showPosition(position);
+  }
+
+  
+
 
   });
+
 
 })
